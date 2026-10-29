@@ -1,0 +1,202 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#050b1d">
+    <meta name="description" content="Play Tic Tac Toe on Siddarth Game Play.">
+    <title>Tic Tac Toe | Siddarth Game Play</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="ambient ambient-blue" aria-hidden="true"></div>
+    <div class="ambient ambient-gold" aria-hidden="true"></div>
+
+    <header class="topbar">
+        <a class="brand" href="./" aria-label="Siddarth Game Play home">
+            <span class="brand-icon">✕<span>○</span></span>
+            <span class="brand-name">SIDDARTH <b>GAME PLAY</b></span>
+        </a>
+
+        <nav class="toolbar" aria-label="Game settings">
+            <button type="button" class="icon-btn" id="themeToggle"
+                aria-label="Switch theme" aria-pressed="false"
+                title="Switch theme">☀️</button>
+
+            <button type="button" class="icon-btn" id="musicToggle"
+                aria-label="Toggle background music" aria-pressed="false"
+                title="Background music">♫</button>
+
+            <button type="button" class="icon-btn" id="aboutOpen"
+                aria-label="About the developer"
+                title="About the developer">♙</button>
+        </nav>
+    </header>
+
+    <main class="game-container">
+
+        <section class="hero">
+            <div class="eyebrow">
+                <span></span> THE CLASSIC. REIMAGINED. <span></span>
+            </div>
+
+            <h1>TIC TAC <span>TOE</span></h1>
+            <p class="subtitle">SIDDARTH GAME PLAY</p>
+            <div class="title-line"><span></span> ✦ <span></span></div>
+        </section>
+
+        <section class="game-card" aria-label="Tic Tac Toe game">
+
+            <div class="game-top">
+                <div class="player-card active" id="playerX">
+                    <span class="player-symbol x-text">X</span>
+                    <span class="player-info">
+                        <small>PLAYER ONE</small>
+                        <strong>Player X</strong>
+                    </span>
+                    <span class="turn-dot"></span>
+                </div>
+
+                <div class="vs">VS</div>
+
+                <div class="player-card" id="playerO">
+                    <span class="player-symbol o-text">O</span>
+                    <span class="player-info">
+                        <small>PLAYER TWO</small>
+                        <strong>Player O</strong>
+                    </span>
+                    <span class="turn-dot"></span>
+                </div>
+            </div>
+
+            <div class="status-area">
+                <span class="live-dot" aria-hidden="true"></span>
+                <span id="status" aria-live="polite">
+                    Player X's turn
+                </span>
+            </div>
+
+            <p class="instruction" id="instruction" aria-live="polite">
+                Place your first symbol in an empty cell.
+            </p>
+
+            <div class="board-frame">
+                <div class="board" id="board"
+                    role="group" aria-label="Tic Tac Toe board">
+
+                    <button type="button" class="cell" data-index="0"
+                        aria-label="Cell 1"></button>
+                    <button type="button" class="cell" data-index="1"
+                        aria-label="Cell 2"></button>
+                    <button type="button" class="cell" data-index="2"
+                        aria-label="Cell 3"></button>
+
+                    <button type="button" class="cell" data-index="3"
+                        aria-label="Cell 4"></button>
+                    <button type="button" class="cell" data-index="4"
+                        aria-label="Cell 5"></button>
+                    <button type="button" class="cell" data-index="5"
+                        aria-label="Cell 6"></button>
+
+                    <button type="button" class="cell" data-index="6"
+                        aria-label="Cell 7"></button>
+                    <button type="button" class="cell" data-index="7"
+                        aria-label="Cell 8"></button>
+                    <button type="button" class="cell" data-index="8"
+                        aria-label="Cell 9"></button>
+                </div>
+            </div>
+
+            <div class="score-row">
+                <div class="score">
+                    <span class="score-symbol x-text">X</span>
+                    <div>
+                        <small>PLAYER X</small>
+                        <strong id="countX">0</strong>
+                    </div>
+                </div>
+
+                <div class="score-divider"></div>
+
+                <div class="score">
+                    <span class="score-symbol o-text">O</span>
+                    <div>
+                        <small>PLAYER O</small>
+                        <strong id="countO">0</strong>
+                    </div>
+                </div>
+            </div>
+
+            <button type="button" id="restart" class="restart-btn">
+                <span aria-hidden="true">↻</span> RESTART GAME
+            </button>
+
+            <p class="game-hint">
+                THINK SMART. MOVE STRATEGICALLY. WIN.
+            </p>
+        </section>
+
+        <footer class="footer">
+            <span>✦</span> MADE FOR THE LOVE OF THE GAME
+            <span class="footer-dot">•</span> SIDDARTH GAME PLAY
+        </footer>
+
+    </main>
+
+    <!-- Developer information modal -->
+    <div class="modal-backdrop" id="aboutModal" hidden>
+        <section class="modal" role="dialog" aria-modal="true"
+            aria-labelledby="aboutTitle">
+
+            <button type="button" class="modal-close" id="aboutClose"
+                aria-label="Close developer information">×</button>
+
+            <div class="developer-avatar">
+                <img
+                    src="images/siddarth.jpg"
+                    alt="Siddarth, developer of Siddarth Game Play"
+                    onerror="this.style.display='none'; this.parentElement.textContent='S';">
+            </div>
+
+            <p class="modal-eyebrow">MEET THE CREATOR</p>
+            <h2 id="aboutTitle">Siddarth</h2>
+
+            <p class="developer-role">
+                Creator of Siddarth Game Play
+            </p>
+
+            <p class="developer-description">
+                A classic game with a modern look, created with
+                creativity, code and a love for gaming.
+            </p>
+
+            <div class="tech-tags">
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>JavaScript</span>
+            </div>
+
+            <button type="button" class="restart-btn modal-done"
+                id="aboutDone">LET'S PLAY</button>
+        </section>
+    </div>
+
+    <!-- Audio files -->
+    <audio id="backgroundMusic"
+        src="audio/background.mp3" loop preload="none"></audio>
+
+    <audio id="placeSound"
+        src="audio/place.mp3" preload="none"></audio>
+
+    <audio id="moveSound"
+        src="audio/move.mp3" preload="none"></audio>
+
+    <audio id="winSound"
+        src="audio/win.mp3" preload="none"></audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
